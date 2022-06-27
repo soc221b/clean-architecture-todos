@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "name": "@clean-architecture-todos/server",
+  "version": "0.1.0",
+  "engines": {
+    "node": "^18.0.0",
+    "pnpm": "^7.0.0"
+  },
+  "author": "Ernest <iendeavor.github.io@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "cp -n db.template.json db.json || exit 0",
+    "dev": "json-server --watch db.json --port 3001"
+  },
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
+}

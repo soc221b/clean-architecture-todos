@@ -1,0 +1,47 @@
+{
+  "private": true,
+  "name": "@clean-architecture-todos/client",
+  "version": "0.1.0",
+  "engines": {
+    "node": "^18.0.0",
+    "pnpm": "^7.0.0"
+  },
+  "author": "Ernest <iendeavor.github.io@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "browser:dev": "webpack serve --mode development -c webpack.browser.config.cjs",
+    "browser:build": "webpack --mode production -c webpack.browser.config.cjs",
+    "node:dev": "webpack --mode development -c webpack.node.config.cjs && node dist/main.js",
+    "node:build": "webpack --mode production -c webpack.node.config.cjs",
+    "test": "jest . --no-cache"
+  },
+  "dependencies": {
+    "ansi-escapes": "^5.0.0",
+    "boxen": "^7.0.0",
+    "inquirer": "^9.0.0",
+    "node-fetch": "^3.2.6",
+    "picocolors": "^1.0.0",
+    "todomvc-app-css": "^2.4.2",
+    "todomvc-common": "^1.0.5",
+    "zod": "^3.17.3"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^8.2.1",
+    "@types/jest": "^28.1.2",
+    "@types/node": "^18.0.0",
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "jest": "^28.1.1",
+    "jest-environment-jsdom": "^28.1.1",
+    "minimist": "^1.2.6",
+    "style-loader": "^3.3.1",
+    "ts-jest": "^28.0.5",
+    "ts-loader": "^9.3.0",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4",
+    "unimport": "^0.4.0",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.2"
+  }
+}

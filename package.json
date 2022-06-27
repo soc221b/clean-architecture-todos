@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "name": "clean-architecture-todos",
+  "engines": {
+    "node": "^18.0.0",
+    "pnpm": "^7.0.0"
+  },
+  "author": "Ernest <iendeavor.github.io@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
+}

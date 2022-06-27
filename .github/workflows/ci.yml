@@ -1,0 +1,113 @@
+name: CI
+
+on:
+  - push
+
+jobs:
+  build-browser:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: "client"
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - name: Use pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm run browser:build
+
+  build-node:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: "client"
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - name: Use pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm run node:build
+
+  test:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: "client"
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - name: Use pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Test
+        run: |
+          node scripts/generate-unimport-dts.cjs --env test
+          pnpm run test
+
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - name: Use pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Lint
+        run: |
+          pnpm run lint
+          git diff --exit-code
