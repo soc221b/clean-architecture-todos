@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "@clean-architecture-todos/server",
+  "author": "Ernest <soc221b.e@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "cp -n db.template.json db.json || exit 0",
+    "dev": "json-server --watch db.json --port 3001"
+  },
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
+}

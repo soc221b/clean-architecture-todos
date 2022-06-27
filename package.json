@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "clean-architecture-todos",
+  "author": "Ernest <soc221b.e@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
+    "prettier": "^2.7.1"
+  }
+}

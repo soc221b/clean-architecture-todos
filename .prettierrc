@@ -1,0 +1,12 @@
+{
+  "plugins": ["@ianvs/prettier-plugin-sort-imports"],
+  "importOrder": [
+    "<BUILTIN_MODULES>",
+    "^@/core/entities/(.*)$",
+    "^@/core/use-cases/(.*)$",
+    "^@/core/repositories/(.*)$",
+    "^@/core/data-sources/(.*)$",
+    "<THIRD_PARTY_MODULES>",
+    "^[./]"
+  ]
+}

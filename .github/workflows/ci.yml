@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  - push
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5.0.0
+        with:
+          node-version-file: .nvmrc
+
+      - run: npm ci
+
+      - run: npx prettier --check .
+
+  test:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: "client"
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5.0.0
+        with:
+          node-version-file: .nvmrc
+
+      - run: npm ci
+
+      - run: npx vitest run
+
+  build-browser:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: "client"
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5.0.0
+        with:
+          node-version-file: .nvmrc
+
+      - run: npm ci
+
+      - run: npm run build
+
+  build-node:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: "client"
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5.0.0
+        with:
+          node-version-file: .nvmrc
+
+      - run: npm ci
+
+      - run: npm run node:build
