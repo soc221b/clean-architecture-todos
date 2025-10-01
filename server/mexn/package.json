@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "@clean-architecture-todos/server",
+  "author": "Ernest <soc221b.e@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node app.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
