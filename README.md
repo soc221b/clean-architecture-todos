@@ -23,7 +23,7 @@
 ### RESTful API
 
 - [JSON server](./server)
-- [Mongo + Express + Node](./server/mexn/)
+- Mongo + Express + Node
 
 ## Others
 
